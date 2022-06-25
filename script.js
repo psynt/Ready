@@ -21,4 +21,5 @@ document.getElementById("ready").onclick = e => {
     body: "Your product is ready",
     vibrate: [200, 100, 200],
   });
+  window.navigator.vibrate([200]);
 }
