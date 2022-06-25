@@ -6,7 +6,10 @@ async function notifications(){
     alert("This app requires notifications to work correctly")
     permission = await Notification.requestPermission();
   } 
-  let notification = new Notification("I'm a Notification!")
+  let notification = new Notification("I'm a Notification!", {
+    body: "Your product is ready",
+    vibrate: [200, 100, 200],
+  });
 }
 
 notifications();
@@ -14,5 +17,8 @@ notifications();
 
 document.getElementById("ready").onclick = e => {
   document.getElementById("state").innerText = "Ready";
-  new Notification("Your product is ready!", {vibrate:true});
+  new Notification("Your product is ready!", {
+    body: "Your product is ready",
+    vibrate: [200, 100, 200],
+  });
 }
